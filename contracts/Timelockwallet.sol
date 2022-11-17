@@ -114,7 +114,7 @@ contract Timelockwallet is ERC20, Ownable {
   function getRecentWithdrawLength(address _account) public view returns(uint256) {
     uint256 _now = block.timestamp;
     uint256 j = 0;
-    uint256 _len = withdrawListIndex[msg.sender];
+    uint256 _len = withdrawListIndex[_account];
     for (uint256 i=_len; i>0; i--) {
       if (withdrawLists[_account][i].createdAt + withdrawDuration > _now) {
         j ++;
