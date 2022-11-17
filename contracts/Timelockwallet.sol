@@ -140,8 +140,4 @@ contract Timelockwallet is ERC20, Ownable {
     }
     return false;
   }
-
-  function addToken(address _token) public onlyOwner {
-    availableTokenLists.push(_token);
-  }
 }
